@@ -1,0 +1,12 @@
+{
+  "name": "dual-pane-file-manager",
+  "version": "1.0.0",
+  "description": "Total Commander-style dual-pane file manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^29.0.0"
+  }
+}

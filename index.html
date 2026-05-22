@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DualPane FM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toolbar">
+    <span class="app-title">⬡ DualPane FM</span>
+    <div class="toolbar-buttons">
+      <button onclick="cmdRename()"  title="F2">F2 Rename</button>
+      <button onclick="cmdMkdir()"   title="F7">F7 New Folder</button>
+      <button onclick="cmdCopy()"    title="F5">F5 Copy</button>
+      <button onclick="cmdMove()"    title="F6">F6 Move</button>
+      <button onclick="cmdDelete()"  title="F8" class="danger">F8 Delete</button>
+    </div>
+  </div>
+
+  <div id="panels">
+    <div id="panel-left"  class="panel active" data-side="left">
+      <div class="panel-header">
+        <select class="drive-select" onchange="onDriveChange(this)"></select>
+        <span class="panel-path"></span>
+      </div>
+      <div class="panel-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-name">Name</th>
+              <th class="col-size">Size</th>
+              <th class="col-date">Modified</th>
+            </tr>
+          </thead>
+          <tbody class="file-list"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="panel-right" class="panel" data-side="right">
+      <div class="panel-header">
+        <select class="drive-select" onchange="onDriveChange(this)"></select>
+        <span class="panel-path"></span>
+      </div>
+      <div class="panel-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-name">Name</th>
+              <th class="col-size">Size</th>
+              <th class="col-date">Modified</th>
+            </tr>
+          </thead>
+          <tbody class="file-list"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="statusbar">
+    <span id="status-left"></span>
+    <span id="status-right"></span>
+  </div>
+
+  <!-- Inline modal -->
+  <div id="modal-overlay" class="hidden">
+    <div id="modal">
+      <div id="modal-title"></div>
+      <input id="modal-input" type="text" spellcheck="false">
+      <div id="modal-btns">
+        <button id="modal-ok">OK</button>
+        <button id="modal-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
